@@ -1,4 +1,4 @@
-# Node.js + Express.js Authentication + Google search API Boilerplate
+# Node.js + Express.js Authentication + Google search API 
 
 This is a project meant to be used as a starting point for APIs that require user authentication (registration and sign on). Sign on sessions are showcased with protected routes that pass through authentication middleware. API is designed to be consumed by a SPA.
 
