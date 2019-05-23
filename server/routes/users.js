@@ -7,6 +7,7 @@ const { authenticate } = require('../middleware/authenticate');
 const { csrfCheck } = require('../middleware/csrfCheck');
 const { initSession, isEmail } = require('../utils/utils');
 const { getSecret } = require('../secrets');
+const { logger } = require('../logs/logger')
 const googleMapsClient = require('@google/maps').createClient({
   key: getSecret['googleKey']
 });
@@ -31,7 +32,7 @@ router.post('/register', async (req, res) => {
     const userId = persistedUser._id;
 
     const session = await initSession(userId);
-
+    logger.info(`User Registration Successful ${email}`)
     res
       .cookie('token', session.token, {
         httpOnly: true,
@@ -46,6 +47,7 @@ router.post('/register', async (req, res) => {
         csrfToken: session.csrfToken,
       });
   } catch (err) {
+    logger.error(`Something went wrong during registration process ${email}`)
     res.status(400).json({
       errors: [
         {
@@ -67,6 +69,7 @@ router.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
     if (!isEmail(email)) {
+      logger.warn(`Bad Request Email must be a valid email address ${email}`)
       return res.status(400).json({
         errors: [
           {
@@ -77,6 +80,7 @@ router.post('/login', async (req, res) => {
       });
     }
     if (typeof password !== 'string') {
+      logger.warn(`Bad Request Password must be a string ${email}`)
       return res.status(400).json({
         errors: [
           {
@@ -88,12 +92,14 @@ router.post('/login', async (req, res) => {
     }
     const user = await User.findOne({ email });
     if (!user) {
+      logger.warn(`user not found ${user}`)
       throw new Error();
     }
     const userId = user._id;
 
     const passwordValidated = await bcrypt.compare(password, user.password);
     if (!passwordValidated) {
+      logger.warn(`invalid password ${user}`)
       throw new Error();
     }
 
@@ -112,6 +118,7 @@ router.post('/login', async (req, res) => {
         csrfToken: session.csrfToken,
       });
   } catch (err) {
+    logger.error(`Check email and password combination ${user}`)
     res.status(401).json({
       errors: [
         {
