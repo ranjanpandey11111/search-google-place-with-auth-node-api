@@ -162,8 +162,7 @@ router.get('/mydetails', authenticate, async (req, res) => {
  */
 router.get('/places', authenticate, async (req, res) => {
   try {
-    const { userId } = req.session;
-    const { searchKey } = req.searchKey;
+    const { query: { searchKey } } = req
     let searchData;
     const exstingSearchDetails = await searchResult.findById({ key: searchKey });
     if (exstingSearchDetails) {
