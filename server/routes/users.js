@@ -177,7 +177,8 @@ router.get('/places', authenticate, async (req, res) => {
         if (!err) {
           console.log(response.json.results);
           searchData = response.json.results
-          let search = new searchResult({ searchKey, searchData });
+          let SD = JSON.stringify(searchData)
+          let search = new searchResult({ searchKey, SD });
           await search.save();
           res.json({
             title: 'place detail',
