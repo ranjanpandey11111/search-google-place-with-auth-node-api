@@ -1,0 +1,27 @@
+{
+  "name": "node-auth-boilerplate",
+  "version": "1.0.0",
+  "description": "Basic Api with Session and Authentication and google location search",
+  "main": "server.js",
+  "scripts": {
+    "start": "cd server && nodemon server.js"
+  },
+  "keywords": [
+    "node.js",
+    "express.js",
+    "user authentication",
+    "endpoint authentication"
+  ],
+  "author": "Ranjan Kumar Pandey",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.1.5",
+    "mongoose-unique-validator": "^2.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  }
+}
