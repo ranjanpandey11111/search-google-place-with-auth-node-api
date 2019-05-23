@@ -157,6 +157,7 @@ router.get('/mydetails', authenticate, async (req, res) => {
  * <p>
  *  Search for places and if existing place than keep 
  *  inside mongodb and retrive from db if same keyword is searched
+ *  param authenticate used to authentic user it is a middleware
  * </p>
  *
  */
@@ -182,7 +183,7 @@ router.get('/places', authenticate, async (req, res) => {
           await search.save();
           res.json({
             title: 'place detail',
-            detail: search,
+            detail: searchData,
           });
         }
       });

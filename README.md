@@ -31,5 +31,5 @@ To run project locally:
 2.  Added new key to session schema. Every session now includes csrfToken key.
 3.  Whenever a new user registers or existing user logs in, a new session is initialized. Sessions now require a csrfToken to be generated along with the original bearer token (using the same `generateToken()` method).
 4.  Once session is initalized, server sets bearer token in a token cookie, but also responds with the session's csrf-token in body.
-5.  This csrf-token **must** be attached to the headers of every request as `csrf-token: 'YOUR TOKEN HERE'` that _would change/modify server-side state_. In this case, the `DELETE api/users/me` and `PUT api/users/logout` routes require a csrf token.
+5.  This csrf-token **must** be attached to the headers of every request as `csrf-token: 'YOUR TOKEN HERE'` that _would change/modify server-side state_. In this case, the  `GET api/users/places` to get gsearch location ,`DELETE api/users/mydetails` and `PUT api/users/logout` routes require a csrf token.
 6.  Protected routes use `csrfCheck` middleware. This middleware should be added to any route that would change state. The csrfCheck for the delete user route is somewhat redundant as it requires the user to provide credentials, but I included it to serve as example.
