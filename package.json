@@ -4,7 +4,9 @@
   "description": "Basic Api with Session and Authentication and google location search",
   "main": "server.js",
   "scripts": {
-    "start": "cd server && nodemon server.js"
+    "start": "cd server && nodemon server.js",
+    "dev-build": "webpack --config webpack.dev.config.js --watch",
+    "watch": "nodemon lib/server.js"
   },
   "keywords": [
     "node.js",
@@ -14,12 +16,17 @@
   ],
   "author": "Ranjan Kumar Pandey",
   "dependencies": {
+    "@google/maps": "^0.5.5",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.3",
     "mongoose": "^5.1.5",
-    "mongoose-unique-validator": "^2.0.1"
+    "mongoose-unique-validator": "^2.0.1",
+    "webpack": "^4.32.2",
+    "webpack-merge": "^4.2.1",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^3.9.0"
   },
   "devDependencies": {
     "nodemon": "^1.17.5"

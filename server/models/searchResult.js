@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const searchResult = new mongoose.Schema({
   key: {
     type: String,

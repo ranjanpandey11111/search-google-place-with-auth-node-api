@@ -1,7 +1,7 @@
 const { createLogger, format, transports } = require('winston');
 require('winston-daily-rotate-file');
 const fs = require('fs');
-const { getSecret } = require('../secrets');
+const { getSecret } = require('../server/secrets');
 //const path = require('path');
 
 const env = getSecret['environment'] || 'development';
@@ -17,7 +17,7 @@ const dailyRotateFileTransport = new transports.DailyRotateFile({
   datePattern: 'YYYY-MM-DD'
 });
 
-export const logger = createLogger({
+const logger = createLogger({
   // change level if in dev environment versus production
   level: env === 'development' ? 'verbose' : 'info',
   format: format.combine(
@@ -39,3 +39,5 @@ export const logger = createLogger({
     dailyRotateFileTransport
   ]
 });
+
+module.exports = { logger}

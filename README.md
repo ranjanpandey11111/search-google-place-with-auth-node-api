@@ -1,4 +1,4 @@
-# Node.js + Express.js Authentication + Google search API 
+# Node.js + Express.js Authentication + Google search + Logg capturing API 
 
 This is a project meant to be used as a starting point for APIs that require user authentication (registration and sign on). Sign on sessions are showcased with protected routes that pass through authentication middleware. API is designed to be consumed by a SPA.
 
@@ -33,3 +33,15 @@ To run project locally:
 4.  Once session is initalized, server sets bearer token in a token cookie, but also responds with the session's csrf-token in body.
 5.  This csrf-token **must** be attached to the headers of every request as `csrf-token: 'YOUR TOKEN HERE'` that _would change/modify server-side state_. In this case, the  `GET api/users/places` to get gsearch location ,`DELETE api/users/mydetails` and `PUT api/users/logout` routes require a csrf token.
 6.  Protected routes use `csrfCheck` middleware. This middleware should be added to any route that would change state. The csrfCheck for the delete user route is somewhat redundant as it requires the user to provide credentials, but I included it to serve as example.
+
+### API Documentaton 
+1. first one should register to access any other API , so for registration call http://localhost:3000/api/users/register with request body as {
+"email":"ejj@gmail.com",
+"password":"test123"
+}
+and response will be , if successful 
+{
+"email":"ejj@gmail.com",
+"password":"test123"
+}
+2.  
