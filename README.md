@@ -59,4 +59,4 @@ request body :
         "email": "ranjan.pandey@hometown.in"
     }
 }
-3. once you successfully login you can access '/api/users/places' and '/api/users/mydetails'
+3. Once you successfully login you can access '/api/users/places' and '/api/users/mydetails'
