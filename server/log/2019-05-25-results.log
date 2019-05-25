@@ -1,0 +1,20 @@
+2019-05-25 11:03:26 error: Not authorized to access this route.
+2019-05-25 11:13:32 error: Not authorized to access this route.
+2019-05-25 11:18:14 error: Not authorized to access this route.
+2019-05-25 11:27:09 error: Not authorized to access this route.
+2019-05-25 11:46:10 error: Not authorized to access this route. CastError: Cast to ObjectId failed for value "{ key: undefined }" at path "_id" for model "searchResult"
+2019-05-25 11:50:15 error: Not authorized to access this route. CastError: Cast to ObjectId failed for value "{ key: 'Dhanbad' }" at path "_id" for model "searchResult"
+2019-05-25 11:51:07 error: Not authorized to access this route. CastError: Cast to ObjectId failed for value "{ key: 'Dhanbad' }" at path "_id" for model "searchResult"
+2019-05-25 11:51:49 error: Not authorized to access this route. CastError: Cast to ObjectId failed for value "{ key: 'Dhanbad' }" at path "_id" for model "searchResult"
+2019-05-25 11:52:03 error: Not authorized to access this route. CastError: Cast to ObjectId failed for value "{ key: 'Dhanbad' }" at path "_id" for model "searchResult"
+2019-05-25 11:52:34 error: Not authorized to access this route. CastError: Cast to ObjectId failed for value "{ key: 'Dhanbad' }" at path "_id" for model "searchResult"
+2019-05-25 11:55:42 error: Not authorized to access this route. CastError: Cast to ObjectId failed for value "{ key: 'Dhanbad' }" at path "_id" for model "searchResult"
+2019-05-25 17:26:28 error: Not authorized to access this route. Missing either a valid API key, or a client ID and secret
+2019-05-25 17:26:55 error: Not authorized to access this route. Missing either a valid API key, or a client ID and secret
+2019-05-25 17:27:35 error: Something went wrong during registration process ValidationError: email: Error, expected `email` to be unique. Value: `ranjan.pandey@hometown.in`
+2019-05-25 17:28:02 error: Not authorized to access this route. Missing either a valid API key, or a client ID and secret
+2019-05-25 17:29:09 error: Not authorized to access this route. Missing either a valid API key, or a client ID and secret
+2019-05-25 17:29:33 error: Not authorized to access this route. Missing either a valid API key, or a client ID and secret
+2019-05-25 17:30:36 error: Not authorized to access this route. Missing either a valid API key, or a client ID and secret
+2019-05-25 17:31:11 info: User Registration Successful ranjan.pandey1@hometown.in
+2019-05-25 17:31:34 error: Not authorized to access this route. Missing either a valid API key, or a client ID and secret

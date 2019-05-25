@@ -174,16 +174,18 @@ router.get('/places', authenticate, async (req, res) => {
   try {
     const { query: { searchKey } } = req
     let searchData;
-    const exstingSearchDetails = await searchResult.findById({ key: searchKey });
+    const exstingSearchDetails = await searchResult.findOne({ key: searchKey });
     if (exstingSearchDetails) {
       res.json({
         title: 'place detail',
         detail: exstingSearchDetails,
       });
     }else{
+      
       googleMapsClient.geocode({
         address: searchKey
       }, async (err, response) => {
+          //console.log("search key", err, exstingSearchDetails);
         if (!err) {
           console.log(response.json.results);
           searchData = response.json.results
@@ -195,13 +197,14 @@ router.get('/places', authenticate, async (req, res) => {
             detail: searchData,
           });
         }
+          throw new Error('Please use correct google map Key.');
       });
     }
     
     //const searchId = insertedSearch._id;
 
   } catch (err) {
-    logger.error(`Not authorized to access this route.`)
+    logger.error(`Not authorized to access this route. ${err}`)
     res.status(401).json({
       errors: [
         {
