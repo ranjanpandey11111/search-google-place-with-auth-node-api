@@ -44,4 +44,19 @@ and response will be , if successful
 "email":"ejj@gmail.com",
 "password":"test123"
 }
-2.  
+2.  Login API work 
+http://localhost:3000/api/users/mydetails
+request body :
+{
+	"email":"ranjan.pandey@hometown.in",
+	"password":"Welcome123"
+}
+
+{
+    "title": "Authentication successful",
+    "detail": "Successfully authenticated user",
+    "user": {
+        "email": "ranjan.pandey@hometown.in"
+    }
+}
+3. once you successfully login you can access '/api/users/places' and '/api/users/mydetails'

@@ -1,2 +1,67 @@
 2019-05-24 20:58:56 error: Something went wrong during registration process
 2019-05-24 21:04:23 warn: user not found null
+2019-05-24 21:22:44 warn: user not found null
+2019-05-24 21:22:44 error: Check email and password combination
+2019-05-24 21:22:54 error: Something went wrong during registration process
+2019-05-24 21:23:14 error: Something went wrong during registration process
+2019-05-24 21:23:16 error: Something went wrong during registration process
+2019-05-24 21:25:17 error: Something went wrong during registration process
+2019-05-24 21:25:41 error: Something went wrong during registration process
+2019-05-24 21:25:44 error: Something went wrong during registration process
+2019-05-24 21:26:04 error: Something went wrong during registration process
+2019-05-24 21:26:08 warn: user not found null
+2019-05-24 21:26:08 error: Check email and password combination
+2019-05-24 21:26:09 warn: user not found null
+2019-05-24 21:26:09 error: Check email and password combination
+2019-05-24 21:26:29 warn: user not found null
+2019-05-24 21:26:29 error: Check email and password combination
+2019-05-24 21:27:24 warn: user not found null
+2019-05-24 21:27:24 error: Check email and password combination Error
+2019-05-24 21:27:47 warn: user not found null
+2019-05-24 21:27:47 error: Check email and password combination Error
+2019-05-24 21:27:51 error: Something went wrong during registration process
+2019-05-24 21:27:52 error: Something went wrong during registration process
+2019-05-24 21:28:00 error: Something went wrong during registration process
+2019-05-24 21:28:06 error: Something went wrong during registration process
+2019-05-24 21:28:52 error: Something went wrong during registration process Error: Email must be a valid email address.
+2019-05-24 21:29:27 error: Something went wrong during registration process Error: Email must be a valid email address.
+2019-05-24 21:31:47 error: Something went wrong during registration process Error: Email must be a valid email address.
+2019-05-24 21:37:11 error: Something went wrong during registration process Error: Email must be a valid email address.
+2019-05-24 21:39:04 error: Something went wrong during registration process Error: Email must be a valid email address.
+2019-05-24 21:40:03 error: Something went wrong during registration process Error: Email must be a valid email address.
+2019-05-24 21:41:35 error: Something went wrong during registration process Error: Email must be a valid email address.
+2019-05-24 21:42:00 error: Something went wrong during registration process Error: Password must be a string.
+2019-05-24 21:42:01 error: Something went wrong during registration process Error: Password must be a string.
+2019-05-24 21:48:39 error: Something went wrong during registration process Error: Email must be a valid email address.
+2019-05-24 21:49:15 error: Something went wrong during registration process Error: Email must be a valid email address.
+2019-05-24 21:49:17 error: Something went wrong during registration process Error: Email must be a valid email address.
+2019-05-24 21:49:32 error: Something went wrong during registration process Error: Email must be a valid email address.
+2019-05-24 21:49:40 warn: user not found null
+2019-05-24 21:49:40 error: Check email and password combination Error
+2019-05-24 21:50:14 warn: user not found null
+2019-05-24 21:50:14 error: Check email and password combination Error
+2019-05-24 21:50:17 error: Something went wrong during registration process Error: Email must be a valid email address.
+2019-05-24 21:50:26 error: Something went wrong during registration process Error: Email must be a valid email address.
+2019-05-24 21:51:41 error: Something went wrong during registration process Error: Email must be a valid email address. undefined
+2019-05-24 21:52:10 error: Something went wrong during registration process Error: Email must be a valid email address. undefined
+2019-05-24 21:52:39 info: User Registration Successful ranjana@gmail.com
+2019-05-24 21:52:48 warn: user not found null
+2019-05-24 21:52:48 error: Check email and password combination Error
+2019-05-24 21:52:50 warn: user not found null
+2019-05-24 21:52:50 error: Check email and password combination Error
+2019-05-24 21:53:35 error: Check email and password combination MongoNetworkError: failed to reconnect after 30 attempts with interval 1000 ms
+2019-05-24 21:54:39 error: Check email and password combination MongoError: Topology was destroyed
+2019-05-24 21:54:51 error: Something went wrong during registration process ValidationError: email: Error, expected `email` to be unique. Value: `ranjana@gmail.com`, _id: Error, expected `_id` to be unique. Value: `5ce81ad3dcc23db6adab28b7`
+2019-05-24 21:55:37 error: Check email and password combination MongoError: Topology was destroyed
+2019-05-24 21:55:49 error: Something went wrong during registration process ValidationError: email: Error, expected `email` to be unique. Value: `ranjana1@gmail.com`, _id: Error, expected `_id` to be unique. Value: `5ce81b0ddcc23db6adab28b8`
+2019-05-24 21:55:51 error: Something went wrong during registration process ValidationError: email: Error, expected `email` to be unique. Value: `ranjana1@gmail.com`, _id: Error, expected `_id` to be unique. Value: `5ce81b0fdcc23db6adab28b9`
+2019-05-24 21:55:57 error: Something went wrong during registration process ValidationError: email: Error, expected `email` to be unique. Value: `ranjana11@gmail.com`, _id: Error, expected `_id` to be unique. Value: `5ce81b15dcc23db6adab28ba`
+2019-05-24 21:56:04 error: Something went wrong during registration process ValidationError: email: Error, expected `email` to be unique. Value: `ranjana11s@gmail.com`, _id: Error, expected `_id` to be unique. Value: `5ce81b1cdcc23db6adab28bb`
+2019-05-24 21:56:27 error: Something went wrong during registration process ValidationError: email: Error, expected `email` to be unique. Value: `ranjana11s11@gmail.com`, _id: Error, expected `_id` to be unique. Value: `5ce81b33dcc23db6adab28bc`
+2019-05-24 23:01:12 error: Something went wrong during registration process ValidationError: email: Error, expected `email` to be unique. Value: `ranjana11s11@gmail.com`, _id: Error, expected `_id` to be unique. Value: `5ce82a60dcc23db6adab28bd`
+2019-05-24 23:01:13 error: Something went wrong during registration process ValidationError: email: Error, expected `email` to be unique. Value: `ranjana11s11@gmail.com`, _id: Error, expected `_id` to be unique. Value: `5ce82a61dcc23db6adab28be`
+2019-05-24 23:01:19 error: Something went wrong during registration process ValidationError: email: Error, expected `email` to be unique. Value: `ranjana11ss11@gmail.com`, _id: Error, expected `_id` to be unique. Value: `5ce82a67dcc23db6adab28bf`
+2019-05-24 23:14:15 info: User Registration Successful ranjana11ss11@gmail.com
+2019-05-24 23:14:18 error: Something went wrong during registration process ValidationError: email: Error, expected `email` to be unique. Value: `ranjana11ss11@gmail.com`
+2019-05-24 23:14:24 info: User Registration Successful ranjana11sse11@gmail.com
+2019-05-24 23:14:29 info: User Registration Successful ranjanga11sse11@gmail.com

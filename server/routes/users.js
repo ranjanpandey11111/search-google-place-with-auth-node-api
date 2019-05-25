@@ -7,7 +7,7 @@ const { authenticate } = require('../middleware/authenticate');
 const { csrfCheck } = require('../middleware/csrfCheck');
 const { initSession, isEmail } = require('../utils/utils');
 const { getSecret } = require('../secrets');
-const { logger } = require('../logs/logger')
+const { logger } = require('../../logs/logger')
 const googleMapsClient = require('@google/maps').createClient({
   key: getSecret['googleKey']
 });
@@ -21,8 +21,9 @@ const router = express.Router();
 router.post('/register', async (req, res) => {
   try {
     const { email, password } = req.body;
+    console.log(!isEmail(email), req.body)
     if (!isEmail(email)) {
-      throw new Error('Email must be a valid email address.');
+      throw new Error(`Email must be a valid email address. ${email}`);
     }
     if (typeof password !== 'string') {
       throw new Error('Password must be a string.');
@@ -38,7 +39,7 @@ router.post('/register', async (req, res) => {
         httpOnly: true,
         sameSite: true,
         maxAge: 1209600000,
-        secure: process.env.NODE_ENV === 'production',
+        //secure: process.env.NODE_ENV === 'production',
       })
       .status(201)
       .json({
@@ -47,7 +48,7 @@ router.post('/register', async (req, res) => {
         csrfToken: session.csrfToken,
       });
   } catch (err) {
-    logger.error(`Something went wrong during registration process ${email}`)
+    logger.error(`Something went wrong during registration process ${err}`)
     res.status(400).json({
       errors: [
         {
@@ -118,7 +119,7 @@ router.post('/login', async (req, res) => {
         csrfToken: session.csrfToken,
       });
   } catch (err) {
-    logger.error(`Check email and password combination ${user}`)
+    logger.error(`Check email and password combination ${err}`)
     res.status(401).json({
       errors: [
         {
@@ -148,6 +149,7 @@ router.get('/mydetails', authenticate, async (req, res) => {
       user,
     });
   } catch (err) {
+    logger.error(`Not authorized to access this route.`)
     res.status(401).json({
       errors: [
         {
@@ -181,7 +183,7 @@ router.get('/places', authenticate, async (req, res) => {
     }else{
       googleMapsClient.geocode({
         address: searchKey
-      }, (err, response) => {
+      }, async (err, response) => {
         if (!err) {
           console.log(response.json.results);
           searchData = response.json.results
@@ -199,6 +201,7 @@ router.get('/places', authenticate, async (req, res) => {
     //const searchId = insertedSearch._id;
 
   } catch (err) {
+    logger.error(`Not authorized to access this route.`)
     res.status(401).json({
       errors: [
         {
@@ -233,11 +236,13 @@ router.delete('/mydetails', authenticate, csrfCheck, async (req, res) => {
     await Session.expireAllTokensForUser(userId);
     res.clearCookie('token');
     await User.findByIdAndDelete({ _id: userId });
+    logger.info(`Successfuly expired login session. ${userId}`)
     res.json({
       title: 'Account Deleted',
       detail: 'Account with credentials provided has been successfuly deleted',
     });
   } catch (err) {
+    logger.error(`Something went wrong during the logout process.`)
     res.status(401).json({
       errors: [
         {
@@ -261,12 +266,13 @@ router.put('/logout', authenticate, csrfCheck, async (req, res) => {
     const { session } = req;
     await session.expireToken(session.token);
     res.clearCookie('token');
-
+    logger.info(`Successfuly expired login session.`)
     res.json({
       title: 'Logout Successful',
       detail: 'Successfuly expired login session',
     });
   } catch (err) {
+    logger.error(`Something went wrong during the logout process.`)
     res.status(400).json({
       errors: [
         {
