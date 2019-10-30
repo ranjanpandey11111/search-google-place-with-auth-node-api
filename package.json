@@ -21,7 +21,7 @@
     "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.3",
-    "mongoose": "^5.1.5",
+    "mongoose": "^5.7.5",
     "mongoose-unique-validator": "^2.0.1",
     "webpack": "^4.32.2",
     "webpack-merge": "^4.2.1",
